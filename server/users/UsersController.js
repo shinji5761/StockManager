@@ -21,7 +21,7 @@ var UsersController = (function (_super) {
      * @constructor
      */
     function UsersController() {
-        return _super.call(this, '/app/user', UsersService_1.UsersService) || this;
+        return _super.call(this, '/app/users', UsersService_1.UsersService) || this;
     }
     return UsersController;
 }(Controller_1.Controller));

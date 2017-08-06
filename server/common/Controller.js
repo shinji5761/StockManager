@@ -24,11 +24,13 @@ var Controller = (function () {
         this.service.get(param, 
         // onSuccessCallback
         function (result) {
-            res.status(200).send(result);
+            console.log('Controller.get.onSuccess');
+            res.send(result);
         }, 
         // onFailCallback
         function (error) {
-            res.status(404).send(error);
+            console.log('Controller.get.onFail');
+            res.send(error);
         });
     };
     return Controller;

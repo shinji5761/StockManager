@@ -7,11 +7,18 @@ var UsersController_1 = require("./server/users/UsersController");
  * Express アプリケーション
  */
 var app = express();
+/**
+ * Local Port
+ */
+var LOCAL_PORT = 8000;
 var Server = (function () {
     /**
      * @constructor
      */
     function Server() {
+        /**
+         * API Controller Object
+         */
         this.controller = {};
         this.settingMiddleware();
         this.settingController();
@@ -42,8 +49,10 @@ var Server = (function () {
      * @method run
      */
     Server.prototype.run = function () {
-        app.set('port', process.env.PORT || 5000);
-        app.listen(app.get('port'));
+        app.set('port', process.env.PORT || LOCAL_PORT);
+        app.listen(app.get('port'), function () {
+            console.log('start port=' + (process.env.PORT || LOCAL_PORT));
+        });
     };
     return Server;
 }());
