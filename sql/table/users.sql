@@ -1,8 +1,10 @@
+-- USERS
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
-	user_id varchar(10) NOT NULL,
-	password varchar(10) NOT NULL,
-	user_name varchar(10),
-	email varchar(20),
+	user_id VARCHAR(10) NOT NULL,
+	password VARCHAR(10) NOT NULL,
+	user_name VARCHAR(10),
+	email VARCHAR(20),
 	create_date DATE,
-	PRIMARY KEY(user_id, password)
+	PRIMARY KEY(user_id)
 );

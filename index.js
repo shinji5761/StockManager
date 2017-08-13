@@ -3,14 +3,21 @@ exports.__esModule = true;
 var express = require("express");
 // === Controller ===
 var UsersController_1 = require("./server/users/UsersController");
+var PortfolioController_1 = require("./server/portfolio/PortfolioController");
 /**
  * Express アプリケーション
  */
 var app = express();
 /**
  * Local Port
+ * @const
+ * @type { number }
  */
 var LOCAL_PORT = 8000;
+/**
+ * サーバー本体
+ * @class
+ */
 var Server = (function () {
     /**
      * @constructor
@@ -34,6 +41,7 @@ var Server = (function () {
     };
     Server.prototype.settingController = function () {
         this.controller['users'] = new UsersController_1.UsersController();
+        this.controller['portfolio'] = new PortfolioController_1.PortfolioController();
     };
     /**
      * ルーティングの設定
@@ -43,6 +51,8 @@ var Server = (function () {
         app.get('/', function (req, res) { res.sendFile('index'); }); // index.html
         // === Users ===
         app.get(this.controller['users']['url'], function (req, res) { _this.controller['users']['get'](req, res); });
+        // === Portfolio ===
+        app.get(this.controller['portfolio']['url'], function (req, res) { _this.controller['portfolio']['get'](req, res); });
     };
     /**
      * アプリケーションの実行

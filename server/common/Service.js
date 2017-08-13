@@ -6,8 +6,8 @@ var fs = require("fs");
 /**
  * Postgresのコンフィグ設定
  */
-// var p_config = JSON.parse(fs.readFileSync('./server/config/PostgresConfig.json', 'utf-8'));
-var p_config = JSON.parse(fs.readFileSync('./server/config/PostgresConfigHeroku.json', 'utf-8'));
+var p_config = JSON.parse(fs.readFileSync('./server/config/PostgresConfig.json', 'utf-8'));
+// var p_config = JSON.parse(fs.readFileSync('./server/config/PostgresConfigHeroku.json', 'utf-8'));
 /**
  * @class Service
  * @abstract
