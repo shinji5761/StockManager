@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 // router
 import { RouterModule } from '@angular/router';
@@ -40,6 +41,7 @@ import { PortfolioComponent } from './page/portfolio/portfolio.component';
 import { BrandComponent } from './page/brand/brand.component';
 import { ProfitComponent } from './page/profit/profit/profit.component';
 import { LodingDialogComponent } from './component/loding-dialog/loding-dialog.component';
+import { AddPortfolioDialogComponent } from './component/add-portfolio-dialog/add-portfolio-dialog.component';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { LodingDialogComponent } from './component/loding-dialog/loding-dialog.c
 		PortfolioComponent,
 		BrandComponent,
 		ProfitComponent,
-		LodingDialogComponent
+		LodingDialogComponent,
+		AddPortfolioDialogComponent
 	],
 	imports: [
 		// ルータ
@@ -82,9 +85,10 @@ import { LodingDialogComponent } from './component/loding-dialog/loding-dialog.c
 		MdProgressSpinnerModule,
 		MdDialogModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		HttpModule
 	],
-	entryComponents : [LodingDialogComponent],
+	entryComponents : [LodingDialogComponent, AddPortfolioDialogComponent],
 	providers: [ApiAccessorService],
 	bootstrap: [AppComponent]
 })

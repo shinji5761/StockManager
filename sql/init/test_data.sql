@@ -13,10 +13,14 @@ INSERT INTO portfolio(user_id, brand_code) VALUES(
 	'{6012, 1212}'
 );
 
--- Portfolio
 INSERT INTO portfolio(user_id, brand_code) VALUES(
 	'admin',
 	'{1489}'
+);
+
+INSERT INTO portfolio(user_id, brand_code) VALUES(
+	'admin',
+	'{1489, 8955}'
 );
 
 -- Brand
@@ -33,6 +37,11 @@ INSERT INTO brand VALUES(
 INSERT INTO brand VALUES(
 	'1489',
 	'追加ブランド'
+);
+
+INSERT INTO brand VALUES(
+	'8957',
+	'追加ブランド2'
 );
 
 -- StockPrice
