@@ -38,7 +38,7 @@ var Server = (function () {
     Server.prototype.settingMiddleware = function () {
         // 静的ファイルの設定
         app.use(express.static(__dirname + '/dist/'));
-        // Cros Originの許可
+        // Cross Originの許可
         app.use(function (req, res, next) {
             res.header('Access-Control-Allow-origin', '*');
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
